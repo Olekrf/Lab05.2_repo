@@ -5,14 +5,14 @@
 #undef main
 
 TEST(UnitTest2, TestS) {
-    double x = 2.0;
-    double eps = 1e-4;
+    const double x = 2;
+    const double eps = 0.00001;
     int n = 0;
     double s = 0;
 
     S(x, eps, n, s);
 
-    EXPECT_NEAR(s, log(x), 1e-3);
+    EXPECT_NEAR(s, 0.69315, 0.0001);
 }
 
 TEST(UnitTest2, TestA) {
@@ -20,5 +20,5 @@ TEST(UnitTest2, TestA) {
     int n = 1;
     double a = 0.5;
     A(x, n, a);
-    EXPECT_NEAR(a, 0.125, 1e-5);
+    EXPECT_DOUBLE_EQ(a, 0.125);
 }
